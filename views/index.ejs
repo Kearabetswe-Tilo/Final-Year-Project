@@ -1,0 +1,22 @@
+<h1>
+	INDEX PAGE !!!
+</h1>
+<div>
+	<a href = "/system/new">Add new values</a>
+</div>
+
+
+<% system.forEach(function(value){ %>
+	<div>
+		<p>
+			Current :<%= value.Current %>
+		</p>
+		<p>
+			Voltage : <%= value.Voltage %>
+		</p>
+	</div>
+<% }) %>
+
+<div>
+	<a href="/logout">Logout</a>
+</div>

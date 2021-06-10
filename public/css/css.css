@@ -1,0 +1,124 @@
+html{
+    min-height: 100%;
+}
+body{
+    background:-webkit-linear-gradient(#374A5E,#0A0E13);
+    color:#A4A1A1;
+    font: 12px sans-serif;
+    padding: 20px;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+.bg{
+    background-color: #1f2c3d;
+    border-color:#7088a1;
+    color: #7088a1;
+    text-align: center;
+    padding: 4px;
+    font-size: 16px;
+}
+.font{
+    font-family: cursive;
+}
+.centered{
+    text-align: center;
+    margin-top: 20ex;
+    width: max-content;
+}
+.spacebetween{
+    margin-right: 4ex;
+}
+.login{
+    background-color: #51D971;
+    margin-left: 18ex;
+}
+.frontbox{
+    height: fit-content;
+    background-color: #374A5E;
+    border-color: #374A5E;
+    padding: 10px;
+    width: 70ex;
+    border-radius: 500px 0px 0px 0px;
+}
+.backbox{
+    height: fit-content;
+    background-color: #576d85;
+    border-color:#576d85 ; 
+    width: 60ex;
+    border-radius: 120px 0px 0px 0px;
+}
+.textboxradius{
+    width: 25ex;
+    border-color:#576d85 ;
+    border-radius: 50px;
+}
+.buttonradius{
+    width: 15ex;
+    border-color:#576d85 ;
+    border-radius: 50px;
+    color: #c6d2df;
+}
+.borderradius{
+    border-radius: 100px;
+}
+.bgsize{
+    width: 100%;
+}
+.bgc{
+    height: fit-content;
+    width: fit-content;
+    background-color: #374b61;
+    color: #7088a1;
+    text-align: center;
+    padding: 4px;
+    font-size: 16px;
+}
+.bgcfooter{
+    height: fit-content;
+    background-color: #374b61;
+    color: #7088a1;
+    text-align: center;
+    padding: 4px;
+    font-size: 16px;
+    line-height: 1;
+    font-size: 14px;
+}
+.bord{
+    border-radius: 0px 20px 20px 0px;
+}
+.btn{color: #A4A1A1;}
+.mt{
+    margin-top: 10px;
+    color: #A4A1A1;
+}
+.btn-success{
+color: #ffffff;
+}
+.btn-danger{
+    color: #ffffff;
+}
+.table{
+    color: beige;
+}
+.modal-dialog{
+    width: 350px;
+    font-size: 12px;
+    color:black;
+}
+.modal-header{
+    background-color: rgb(216, 35, 35);
+    color: white;
+}
+.fa-custom{
+    color: rgb(216, 35, 35);
+}
+.btn-custom{
+    border: #51D971 2px solid;
+}
+.spacing{
+    justify-content: space-around;
+}
+.textsize{
+    width: 170px;
+    min-height:fit-content;
+}

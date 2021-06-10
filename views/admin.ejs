@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/css.css" />
+		<script src="js/script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+		/>
+		<title>WIND-TURBINE-EXPERIMENTAL-ANALYSIS</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div>
+				<div class="col-12">
+					<h4>FOR MANUAL DATA INPUT PURPOSE</h4>
+				</div>
+			</div>
+		</div>
+		<form action="/system" method="POST">
+			<div class="container mt-5">
+				<label for="Voltage">Voltage</label>
+				<div class="row">
+					<input
+						class="textsize mr-4"
+						placeholder="Voltage"
+						type="text"
+						name="system[Voltage]"
+						id="_Voltage"
+					/>
+				</div>
+				<br />
+				<p id="vp"></p>
+				<label class="mt-4" for="Current">Current</label>
+				<div class="row">
+					<input
+						class="textsize mr-4"
+						placeholder="Current"
+						type="text"
+						name="system[Current]"
+						id="_Current"
+					/>
+				</div>
+				<br />
+				<p id="vw"></p>
+				<label class="mt-4" for="Energy">Power</label>
+				<div class="row">
+					<input
+						class="textsize mr-4"
+						placeholder="Power"
+						type="text"
+						name="system[Power]"
+						id="_Energy"
+					/>
+				</div>
+				<br />
+				<p id="ve"></p>
+			</div>
+			<div class="container">
+				<div class="row">
+						<div class="col-4">
+							<a href="/login" type="button" class="btn buttonradius"
+								><i class="fa fa-home"> Go Home</i></a
+							>
+						</div>
+
+						<div class="col-4 mr-2">
+							<button
+								class="btn btn-success borderradius"
+								type="submit"
+							><i class="fa fa-send" style="color:white"> Submit</i></button>
+						</div>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

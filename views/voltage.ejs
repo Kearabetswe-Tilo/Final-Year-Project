@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+    <title>WIND-TURBINE-EXPERIMENTAL-ANALYSIS</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-12 col-md-10 col-sm-12 bg mt p-2">DATA SAMPLES</div>
+        <button class="btn btn-danger ml-4 mt buttonradius" data-toggle="modal"
+            data-target="#mybutton1">Log-out</button>
+    </div>
+    <div class="modal" id="mybutton1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">LOGOUT !</h6>
+                    <button class="close" type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <i class="fa fa-warning fa-custom fa-3x"></i>
+                            <p class="mt-3 ml-2">are you sure you want to log-out of the system ?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button href="/login" id="LObutton" onclick="HomeButton(this.id)" class="btn btn-custom buttonradius" type="button">Yes</button>
+                    <button class="btn btn-default buttonradius" type="button" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div>
+		<a href="/admin" type="button" class="btn col-3 btn-primary buttonradius">Add New Values</a>
+	</div>
+    <div class="container mt">
+        <div class="row">
+            <div class="col-12 col-md-6 col-sm-6 mt">
+                
+            </div>
+            <div class="col-12 col-md-6 col-sm-6 mt">
+                <button type="button" class="btn buttonradius">Line-Chart</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt">
+        <div class="row">
+            <div class="col-10 col-md-3 col-sm-10 col-lg-3 bgc bord mr-4 mt ">
+                <h5>DATA</h5>
+                <div class="container">
+                    <div class="row font"><button onclick="location.href='/system'" type="button" class="btn btn-default">Current vs Time</button>
+                    </div>
+                    <div class="row font"><button onclick="location.href='/power'" type="button" class="btn btn-default">Power vs Time</button>
+                    </div>
+					 <div class="row font"><button onclick="location.href='/volcurr'" type="button" class="btn btn-default">Voltage vs Current</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-md-12 col-sm-12 col-lg-7 bgc mt">
+                <canvas id="myChart" width="400" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="bgcfooter mt font borderradius">
+            <h5>Data Analysis Description</h5>
+            <p> The energy used is the amount of charge Q moved through voltage V in a time interval t. It is equal to the integral of power over time.</p>
+        </div>
+    </div>
+	<p id="curr" hidden>
+		<%= system.current %>
+	</p>
+	
+	<p id="vol" hidden>
+		<%= system.voltage %>
+	</p>
+	<p id="pow" hidden>
+		<%= system.power %>
+	</p>
+    <script>
+        Chart.defaults.global.defaultFontColor = '#A4A1A1';
+        Chart.defaults.global.defaultFontFamily = 'cursive';
+		let arrCurrent = document.getElementById('curr').textContent.split(",");
+	    let arrVoltage = document.getElementById('vol').textContent.split(",");
+	    let arrPower = document.getElementById('pow').textContent.split(",");
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels:['10', '20', '30', '40', '50', '60','70','80','90','100'],
+                datasets: [{
+                    label: 'Voltage vs Time',
+                    data: arrVoltage,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1,
+                    hoverBorderColor: 'rgb(255,255,255)',
+                    hoverBorderWidth: 2,
+                }],
+
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</body>
+
+</html>
